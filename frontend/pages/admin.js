@@ -7,14 +7,14 @@ import Navbar from "../components/navbar";
 import withAuth from "../components/withAuth";
 
 
-const URL = "http://localhost/api/pets";
+const URL = "http://localhost/api/trees";
 const URL2 = "http://localhost/api/income";
 
 
 const fetcher = url => axios.get(url).then(res => res.data)
 const SWR1 = () => {
-    const [pets, setPets] = useState({ list: [{ id: 1, type: 'cat', age: 1, weight: 5, price: 2000 },] })
-    const [pet, setPet] = useState({})
+    const [trees, setTrees] = useState({ list: [{ id: 1, type: 'cat', age: 1, weight: 5, price: 2000 },] })
+    const [tree, setTree] = useState({})
     const [id, setId] = useState(0)
     const [type, setType] = useState('')
     const [age, setAge] = useState(0)
@@ -25,7 +25,7 @@ const SWR1 = () => {
 
 
     useEffect(() => {
-        getPets();
+        getTrees();
         getIncome();
         profileUser();
       }, []);
@@ -43,10 +43,10 @@ const SWR1 = () => {
         }
       };
     
-    const getPets = async () => {
-        let pets = await axios.get(URL)
-        setPets(pets.data)
-        //console.log('Pet:', pets.data)
+    const getTrees = async () => {
+        let trees = await axios.get(URL)
+        setTrees(trees.data)
+        //console.log('Tree:', trees.data)
     }
     const getIncome = async () => {
         let income = await axios.get(URL2)
@@ -54,30 +54,30 @@ const SWR1 = () => {
         //console.log('income:', income.data)
     }
 
-    const getPet = async (id) => {
-        let pet = await axios.get(`${URL}/${id}`)
-        console.log('bear id: ', pet.data)
-        setPet({ id: pet.data.id, type: pet.data.type, weight: pet.data.weight, age: pet.data.age, price: pet.data.price })
+    const getTree = async (id) => {
+        let tree = await axios.get(`${URL}/${id}`)
+        console.log('bear id: ', tree.data)
+        setTree({ id: tree.data.id, type: tree.data.type, weight: tree.data.weight, age: tree.data.age, price: tree.data.price })
     }
 
 
 
-    const printPets = () => {
-        if (pets && pets.length)
-            return pets.map((pet, index) =>
+    const printTrees = () => {
+        if (trees && trees.length)
+            return trees.map((tree, index) =>
                 <li className={styles.listItem} key={index}>
-                    <h6>Id:{(pet) ? pet.id : 0}</h6>
-                    <h6>Type:{(pet) ? pet.type : '-'}</h6>
-                    <h6>Age:{(pet) ? pet.age : 0}</h6>
-                    <h6>Weight:{(pet) ? pet.weight : 0}</h6>
-                    Price:{(pet) ? pet.price : 0}
-                    <button className={styles.byttondelet} onClick={() => deletePet(pet.id)} >Delete</button>
-                    <button className={styles.byttonget} onClick={() => getPet(pet.id)}>Get</button>
-                    <button className={styles.byttonupdate} onClick={() => updatePet(pet.id)}>Update</button>
+                    <h6>Id:{(tree) ? tree.id : 0}</h6>
+                    <h6>Type:{(tree) ? tree.type : '-'}</h6>
+                    <h6>Age:{(tree) ? tree.age : 0}</h6>
+                    <h6>Weight:{(tree) ? tree.weight : 0}</h6>
+                    Price:{(tree) ? tree.price : 0}
+                    <button className={styles.byttondelet} onClick={() => deleteTree(tree.id)} >Delete</button>
+                    <button className={styles.byttonget} onClick={() => getTree(tree.id)}>Get</button>
+                    <button className={styles.byttonupdate} onClick={() => updateTree(tree.id)}>Update</button>
                 </li>
             )
         else
-            return <li> No Pet</li>
+            return <li> No Tree</li>
     }
 
     const printIncome = () => {
@@ -85,22 +85,22 @@ const SWR1 = () => {
     }
 
 
-    const addPet = async (type, age, weight, price) => {
-        let pets = await axios.post(URL, { type, age, weight, price })
-        setPets(pets.data)
+    const addTree = async (type, age, weight, price) => {
+        let trees = await axios.post(URL, { type, age, weight, price })
+        setTrees(trees.data)
     }
 
 
-    const deletePet = async (id) => {
+    const deleteTree = async (id) => {
         const result = await axios.delete(`${URL}/${id}`)
         console.log(result.data)
-        getPets()
+        getTrees()
     }
 
-    const updatePet = async (id) => {
+    const updateTree = async (id) => {
         const result = await axios.put(`${URL}/${id}`, { id, type, age, weight, price })
         //console.log('student id update: ', result.data)
-        getPets()
+        getTrees()
     }
 
 
@@ -109,16 +109,16 @@ const SWR1 = () => {
           <Navbar />
         <h1>Admin</h1>
         <h2>Income:{printIncome()}</h2>
-        <h2>Pets</h2>
-        <ul className={styles.list}  >{printPets()}</ul>
-        selected pet: {pet.type} {pet.age} {pet.weight} {pet.price}
-        <h2>Add pet</h2>
+        <h2>Trees</h2>
+        <ul className={styles.list}  >{printTrees()}</ul>
+        selected tree: {tree.type} {tree.age} {tree.weight} {tree.price}
+        <h2>Add tree</h2>
         <ul className={styles.formadd} >
             Type:<input type="text" onChange={(e) => setType(e.target.value)} /> <br />
         Age:<input type="number" onChange={(e) => setAge(e.target.value)} /> <br />
         Weight:<input type="number" onChange={(e) => setWeight(e.target.value)} /> <br />
         Price:<input type="number" onChange={(e) => setPrice(e.target.value)} /> <br />
-            <button className={styles.byttonadd} onClick={() => addPet(type, age, weight, price)}>Add new pet</button>
+            <button className={styles.byttonadd} onClick={() => addTree(type, age, weight, price)}>Add new tree</button>
         </ul>
     </div>
     )

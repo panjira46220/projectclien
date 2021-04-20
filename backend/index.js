@@ -23,7 +23,7 @@ router.use(cors({ origin: 'http://localhost:3000', credentials: true }))
 router.use(express.json())
 router.use(express.urlencoded({ extended: false }))
 
-let pets = {
+let trees = {
     list: [
         { id: 1, type: 'cat', age: 1, weight: 5, price: 2000 },
         { id: 2, type: 'dog', age: 1, weight: 10, price: 3000 }
@@ -85,40 +85,40 @@ router.get('/foo',
         res.send('foo')
     });
 
-    router.route('/pets')
-    .get((req, res) => res.json(pets.list))
+    router.route('/trees')
+    .get((req, res) => res.json(trees.list))
     .post((req, res) => {
         console.log(req.body)
-        let newPet = {}
-        newPet.id = (pets.list.length) ? pets.list[pets.list.length - 1].id + 1 : 1
-        newPet.type = req.body.type
-        newPet.age = req.body.age
-        newPet.weight = req.body.weight
-        newPet.price = req.body.price
-        pets = { "list": [...pets.list, newPet] }
-        res.json(pets.list)
+        let newTree = {}
+        newTree.id = (trees.list.length) ? trees.list[trees.list.length - 1].id + 1 : 1
+        newTree.type = req.body.type
+        newTree.age = req.body.age
+        newTree.weight = req.body.weight
+        newTree.price = req.body.price
+        trees = { "list": [...trees.list, newTree] }
+        res.json(trees.list)
     })
 
-router.route('/pets/:pet_id')
+router.route('/trees/:tree_id')
     .get((req, res) => {
-        const pet_id = req.params.pet_id
-        const id = pets.list.findIndex(item => +item.id === +pet_id)
-        res.json(pets.list[id])
+        const tree_id = req.params.tree_id
+        const id = trees.list.findIndex(item => +item.id === +tree_id)
+        res.json(trees.list[id])
     })
     .put((req, res) => {
-        const pet_id = req.params.pet_id
-        const id = pets.list.findIndex(item => +item.id === +pet_id)
-        pets.list[id].id = req.body.id
-        pets.list[id].type = req.body.type
-        pets.list[id].age = req.body.age
-        pets.list[id].weight = req.body.weight
-        pets.list[id].price = req.body.price
-        res.json(pets.list)
+        const tree_id = req.params.tree_id
+        const id = trees.list.findIndex(item => +item.id === +tree_id)
+        trees.list[id].id = req.body.id
+        trees.list[id].type = req.body.type
+        trees.list[id].age = req.body.age
+        trees.list[id].weight = req.body.weight
+        trees.list[id].price = req.body.price
+        res.json(trees.list)
     })
     .delete((req, res) => {
-        const pet_id = req.params.pet_id
-        pets.list = pets.list.filter(item => +item.id !== +pet_id)
-        res.json(pets.list)
+        const tree_id = req.params.tree_id
+        trees.list = trees.list.filter(item => +item.id !== +tree_id)
+        res.json(trees.list)
     })
 
 
@@ -128,15 +128,15 @@ router.route('/income')
 
 
 
-router.route('/purchase/:pet_id')
+router.route('/purchase/:tree_id')
     .delete((req, res) => {
-        const pet_id = req.params.pet_id
-        const id = pets.list.findIndex(item => +item.id === +pet_id)
-        console.log('PetID: ', pet_id, 'ID: ', id)
+        const tree_id = req.params.tree_id
+        const id = trees.list.findIndex(item => +item.id === +tree_id)
+        console.log('TreeID: ', tree_id, 'ID: ', id)
         if (id !== -1) {
-            income += pets.list[id].price
-            pets.list = pets.list.filter(item => +item.id !== +pet_id)
-            res.json(pets.list)
+            income += trees.list[id].price
+            trees.list = trees.list.filter(item => +item.id !== +tree_id)
+            res.json(trees.list)
         }
         else {
             res.send('Not found')
