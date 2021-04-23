@@ -1,42 +1,38 @@
 import Link from 'next/link'
-
+import 'bootstrap/dist/css/bootstrap.min.css';
 
  
 const Navbar = () => (
+    <div class="nav">
     
-    <div className="navbar navbar-expand-lg navbar-dark bg-dark fixed-top ">
+    
     <meta charset="utf-8"></meta>
     <meta name="viewport" content="width=device-width, initial-scale=1"></meta>
 
     
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous"></link>
     
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous"></link>
+    <div className="navbar navbar-expand-sm navbar-dark bg-dark fixed-top ">
     <div class="container-fluid">
          
-    <div class="collapse navbar-collapse" id="navbarNav"  >
+  
+      
       <ul class="navbar-nav ">
-
-        <li class="nav-item" >
-          <Link href="/"><a class="nav-link active" >Home </a></Link> 
-        </li>
-
-        <li class="nav-item">
-            <Link href="/register"><a class="nav-link">Register</a></Link>
-        </li>
-
-        <li class="nav-item">
-            <Link href="/login"><a class="nav-link">Login</a></Link>
+    
+          
+        <li class="nav-item " >
+          <Link href="/"><a class="nav-link" >Home </a></Link> 
         </li>
         
-        <li class="nav-item">
+        <li class="nav-item ">
             <Link href="/profile"><a class="nav-link">Profile</a></Link>
         </li>
 
-        <li class="nav-item">
+        <li class="nav-item ">
             <Link href="/foo"><a class="nav-link">Foo</a></Link>
         </li>
 
-        <li class="nav-item">
+        <li class="nav-item ">
             <Link href="/trees"><a class="nav-link">Trees</a></Link>
         </li>
 
@@ -44,18 +40,41 @@ const Navbar = () => (
             <Link href="/admin"><a class="nav-link">Admin</a></Link>
         </li>
 
-        <li class="nav-item">
+        <li class="nav-item ">
             <Link href="/getConfig"><a class="nav-link"> Config</a></Link>
         </li>
-
+         
         <li class="nav-item">
-            <Link href="/logout"><a class="nav-link"> Logout</a></Link>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        </li>
+    
+    
+        <li class="nav-item">
+            <Link href="/register"><a class="nav-link active">Register</a></Link>
         </li>
 
-      </ul>
+        <li class="nav-item">
+            <Link href="/login"><a class="nav-link active">Login</a></Link>
+        </li>
+
+        <li class="nav-item">
+            <Link href="/logout"><a class="nav-link active"> Logout</a></Link>
+        </li>
+
+
+        
+     </ul>
     </div>
-    </div></div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
+    <style>
     
+    </style>
+    <br/><br/><br/>
+    </div>
+    
+    
+  
 )
 
 export default Navbar
