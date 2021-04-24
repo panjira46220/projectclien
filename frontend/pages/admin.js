@@ -13,10 +13,10 @@ const URL2 = "http://localhost/api/income";
 
 const fetcher = url => axios.get(url).then(res => res.data)
 const SWR1 = () => {
-    const [trees, setTrees] = useState({ list: [{ id: 1, type: 'cat', age: 1, weight: 5, price: 2000 },] })
+    const [trees, setTrees] = useState({ list: [{ id: 1, name: 'cat', age: 1, weight: 5, price: 2000 },] })
     const [tree, setTree] = useState({})
     const [id, setId] = useState(0)
-    const [type, setType] = useState('')
+    const [name, setName] = useState('')
     const [age, setAge] = useState(0)
     const [weight, setWeight] = useState(0)
     const [price, setPrice] = useState(0)
@@ -57,7 +57,7 @@ const SWR1 = () => {
     const getTree = async (id) => {
         let tree = await axios.get(`${URL}/${id}`)
         console.log('bear id: ', tree.data)
-        setTree({ id: tree.data.id, type: tree.data.type, weight: tree.data.weight, age: tree.data.age, price: tree.data.price })
+        setTree({ id: tree.data.id, name: tree.data.name, weight: tree.data.weight, age: tree.data.age, price: tree.data.price })
     }
 
 
@@ -67,7 +67,7 @@ const SWR1 = () => {
             return trees.map((tree, index) =>
                 <li className={styles.listItem} key={index}>
                     <h6>Id:{(tree) ? tree.id : 0}</h6>
-                    <h6>Type:{(tree) ? tree.type : '-'}</h6>
+                    <h6>Name:{(tree) ? tree.name : '-'}</h6>
                     <h6>Age:{(tree) ? tree.age : 0}</h6>
                     <h6>Weight:{(tree) ? tree.weight : 0}</h6>
                     Price:{(tree) ? tree.price : 0}
@@ -85,8 +85,8 @@ const SWR1 = () => {
     }
 
 
-    const addTree = async (type, age, weight, price) => {
-        let trees = await axios.post(URL, { type, age, weight, price })
+    const addTree = async (name, age, weight, price) => {
+        let trees = await axios.post(URL, { name, age, weight, price })
         setTrees(trees.data)
     }
 
@@ -98,7 +98,7 @@ const SWR1 = () => {
     }
 
     const updateTree = async (id) => {
-        const result = await axios.put(`${URL}/${id}`, { id, type, age, weight, price })
+        const result = await axios.put(`${URL}/${id}`, { id, name, age, weight, price })
         //console.log('student id update: ', result.data)
         getTrees()
     }
@@ -111,14 +111,14 @@ const SWR1 = () => {
         <h2>Income:{printIncome()}</h2>
         <h2>Trees</h2>
         <ul className={styles.list}  >{printTrees()}</ul>
-        selected tree: {tree.type} {tree.age} {tree.weight} {tree.price}
+        selected tree: {tree.name} {tree.age} {tree.weight} {tree.price}
         <h2>Add tree</h2>
         <ul className={styles.formadd} >
-            Type:<input type="text" onChange={(e) => setType(e.target.value)} /> <br />
+            Namw:<input type="text" onChange={(e) => setName(e.target.value)} /> <br />
         Age:<input type="number" onChange={(e) => setAge(e.target.value)} /> <br />
         Weight:<input type="number" onChange={(e) => setWeight(e.target.value)} /> <br />
         Price:<input type="number" onChange={(e) => setPrice(e.target.value)} /> <br />
-            <button className={styles.byttonadd} onClick={() => addTree(type, age, weight, price)}>Add new tree</button>
+            <button className={styles.byttonadd} onClick={() => addTree(name, age, weight, price)}>Add new tree</button>
         </ul>
     </div>
     )
