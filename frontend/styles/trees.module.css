@@ -10,6 +10,7 @@
   font-size: 16px;
   margin: 4px;
   cursor: pointer;
+  font-family: 'Mali', cursive;
 }
 .button-delete{
   background-color: red;
@@ -23,6 +24,7 @@
   font-size: 16px;
   margin: 4px 2px;
   cursor: pointer;
+  font-family: 'Mali', cursive;
 }
 .button-update{
   background-color: blue;
@@ -36,6 +38,7 @@
   font-size: 16px;
   margin: 4px 2px;
   cursor: pointer;
+  font-family: 'Mali', cursive;
 }
 .button-add{
   background-color: blue;
@@ -46,9 +49,11 @@
   font-size: 16px;
   margin: 4px 2px;
   margin-top : 15px;
+  font-family: 'Mali', cursive;
 }
 .edit-button{
-  margin-top : 20px
+  margin-top : 20px;
+  font-family: 'Mali', cursive;
 }
 .list {
   display: flex;
@@ -58,6 +63,7 @@
   padding: 1px;
   flex-wrap: wrap;
   width: 80vw;
+  font-family: 'Mali', cursive;
 }
 .container {
 min-height: 100vh;
@@ -66,7 +72,10 @@ display: flex;
 flex-direction: column;
 justify-content: center;
 align-items: center;
-border: 10px solid blue;
+
+font-family: 'Mali', cursive;
+color: #6bd3b9;
+background-color: rgb(53, 50, 50);
 }
 .listItem {
 display: flex;
@@ -76,6 +85,8 @@ padding: 10px;
 border: 2px solid green;
 font-size: 1.4rem;
 text-align: center;
+font-family: 'Mali', cursive;
+border-radius: 25px;
 }
 .form-add{
   display: flex;
@@ -85,4 +96,5 @@ text-align: center;
   border: 2px solid green;
   font-size: 1.4rem;
   text-align: center;
+  font-family: 'Mali', cursive;
 }

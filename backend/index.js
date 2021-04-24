@@ -26,8 +26,8 @@ router.use(express.urlencoded({ extended: false }))
 
 let trees = {
     list: [
-        { id: 1, type: 'cat', age: 1, weight: 5, price: 2000 },
-        { id: 2, type: 'dog', age: 1, weight: 10, price: 3000 }
+        { id: 1, name: 'ต้นพุดชมพู', number: 1, price: 2000, imageurl:"https://co.lnwfile.com/q0zg1k.jpg"} ,
+        { id: 2, name: 'ต้นมะลิซ้อน', number: 3,  price: 3000, imageurl:"https://th-live-02.slatic.net/p/121065040894e26b73227d8c5cff8abd.jpg"}
     ]
 }
 let income = 0
@@ -80,11 +80,7 @@ router.get('/profile',
         res.send(req.user)
     });
 
-router.get('/foo',
-    passport.authenticate('jwt', { session: false }),
-    (req, res, next) => {
-        res.send('foo')
-    });
+;
 
     router.route('/trees')
     .get((req, res) => res.json(trees.list))
@@ -92,10 +88,10 @@ router.get('/foo',
         console.log(req.body)
         let newTree = {}
         newTree.id = (trees.list.length) ? trees.list[trees.list.length - 1].id + 1 : 1
-        newTree.type = req.body.type
-        newTree.age = req.body.age
-        newTree.weight = req.body.weight
+        newTree.name = req.body.name
+        newTree.number = req.body.number
         newTree.price = req.body.price
+        imageurl.price = req.body.imageurl
         trees = { "list": [...trees.list, newTree] }
         res.json(trees.list)
     })
@@ -110,10 +106,10 @@ router.route('/trees/:tree_id')
         const tree_id = req.params.tree_id
         const id = trees.list.findIndex(item => +item.id === +tree_id)
         trees.list[id].id = req.body.id
-        trees.list[id].type = req.body.type
-        trees.list[id].age = req.body.age
-        trees.list[id].weight = req.body.weight
+        trees.list[id].name = req.body.name
+        trees.list[id].number = req.body.number
         trees.list[id].price = req.body.price
+        trees.list[id].imageurl = req.body.imageurl
         res.json(trees.list)
     })
     .delete((req, res) => {
@@ -163,6 +159,25 @@ router.post('/register',
             res.status(422).json({ message: "Cannot register" })
         }
     })
+
+router.put('/retrees/:tree_id',
+     async (req, res) => {   
+        const tree_id = req.params.tree_id
+        const id = trees.list.findIndex(item => +item.id === +tree_id)
+        if (trees.list[id].number > 0)
+            trees.list[id].number--
+            res.json(req.trees)
+    
+    })
+    
+router.put('/addtree/:tree_id',
+    async (req, res) => {     
+        const tree_id = req.params.tree_id
+        const id = trees.list.findIndex(item => +item.id === +tree_id)
+        trees.list[id].number++
+            res.json(req.trees)
+    })
+
 
 router.get('/alluser', (req, res) => res.json(db.users.users))
 

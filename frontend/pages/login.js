@@ -60,22 +60,46 @@ export default function Login({ token }) {
         <Layout>
             <Head>
                 <title>Login</title>
+                <meta charset="utf-8"></meta>
+    
+
+    
+    
+    
+                <link href="https://fonts.googleapis.com/css2?family=Mali:ital,wght@1,300&display=swap" rel="stylesheet"></link>
             </Head>
             <div className={styles.container}>
                 <Navbar />
                 <h1>Login</h1>
-                <div><b>Token:</b> {token.substring(0, 15)}...
-                <button onClick={copyText}> Copy token </button>
-                </div>
-                <br/>
+                
+                
                 <div>
-                    Status:  {status}
+                 {status}
                 </div>
-                <br />
+                
                 {loginForm()}
                 <div>
-                    <button onClick={login}>Login</button>
+                    <button   onClick={login}>Login</button>
                 </div>
+                <style jsx>{`
+                h1,h2,div,b,button{
+                  font-family: 'Mali', cursive;
+                }
+                button {
+                    background-color: #4CAF50; /* Green */
+                    border: none;
+                    border-radius: 12px;
+                    color: white;
+                    padding: 12px 20px;
+                    text-align: center;
+                    text-decoration: none;
+                    display: inline-block;
+                    font-size: 16px;
+                    margin: 4px 2px;
+                    cursor: pointer;
+                  }
+
+            `}</style>
             </div>
         </Layout>
     )

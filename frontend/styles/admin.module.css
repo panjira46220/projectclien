@@ -5,7 +5,10 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    border: solid blue;
+   
+    font-family: 'Mali', cursive;
+    color: #6bd3b9;
+    background-color:  rgb(53, 50, 50);
   }
  
   .list {
@@ -16,6 +19,7 @@
     padding: 1px;
     flex-wrap: wrap;
     width: 80vw;
+    font-family: 'Mali', cursive;
   }
   
   .listItem {
@@ -26,20 +30,22 @@
     border: 2px solid green;
     font-size: 1.4rem;
     text-align: center;
+    font-family: 'Mali', cursive;
   }
   
   .byttonupdate{
-    background-color: blue;
-    border-radius: 10%;
+    background-color:#4CAF50;;
+    border-radius: 12px;
     border: none;
     color: white;
-    padding: 10px 10px;
+    padding: 12px 20px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
     font-size: 16px;
     margin: 4px 2px;
     cursor: pointer;
+    font-family: 'Mali', cursive;
   }
 
   .byttonget{
@@ -54,6 +60,7 @@
     font-size: 16px;
     margin: 4px 2px;
     cursor: pointer;
+    font-family: 'Mali', cursive;
   }
 
   .byttondelet{
@@ -68,6 +75,7 @@
     font-size: 16px;
     margin: 4px 2px;
     cursor: pointer;
+    font-family: 'Mali', cursive;
   }
 
   .byttonadd{
@@ -79,6 +87,7 @@
     font-size: 16px;
     margin: 4px 2px;
     margin-top: 15px;
+    font-family: 'Mali', cursive;
   }
 
   .formadd{
@@ -89,4 +98,5 @@
       border: 2px solid green;
       font-size: 1.4rem;
       text-align: center;
+      font-family: 'Mali', cursive;
   }
