@@ -8,6 +8,7 @@
     font-family: 'Mali', cursive;
     color: #6bd3b9;
     background-color: rgb(53, 50, 50);
+    background-image: url(https://gfycat.com/embellishedbigkingsnake);
 }
 
 .content {
@@ -25,7 +26,7 @@
 }
 
 .gridContainer>div {
-    background-color: rgba(255, 255, 255, 0.8);
+    background-color:  rgb(53, 50, 50);
     text-align: left;
     padding: 10px 0;
     font-size: 1.2rem;
