@@ -87,6 +87,7 @@ font-size: 1.4rem;
 text-align: center;
 font-family: 'Mali', cursive;
 border-radius: 25px;
+box-shadow: 0 10px 16px 0 rgb(174, 230, 129), 0 6px 20px 0 rgba(241, 237, 237, 0.973);
 }
 .form-add{
   display: flex;

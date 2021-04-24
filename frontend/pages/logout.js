@@ -38,6 +38,7 @@ export default function Logout({ token }) {
                 <div>
                 <h3>{status}</h3>
                 </div>
+                
                 <style jsx>{`
                 h1,h2,ul,h3{
                   font-family: 'Mali', cursive;

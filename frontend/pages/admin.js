@@ -67,7 +67,8 @@ const SWR1 = () => {
     const printTrees = () => {
         if (trees && trees.length)
             return trees.map((tree, index) =>
-                <li className={styles.listItem} key={index}>
+            
+                <li className={styles.listItem} key={index}><link href="https://fonts.googleapis.com/css2?family=Mali:ital,wght@1,300&display=swap" rel="stylesheet"></link>
                     <h6>Id:{(tree) ? tree.id : 0}</h6>
                     <h6>Name:{(tree) ? tree.name : '-'}</h6>
                     <img src={(tree.imageurl)} width="160" height="100"></img>
@@ -76,6 +77,30 @@ const SWR1 = () => {
                     <button className={styles.byttondelet} onClick={() => deleteTree(tree.id)} >Delete</button>
                     <button className={styles.byttonget} onClick={() => getTree(tree.id)}>Get</button>
                     <button className={styles.byttonupdate} onClick={() => updateTree(tree.id)}>Update</button>
+                    <style jsx>{`
+                h1,h2,ul{
+                  font-family: 'Mali', cursive;
+                }
+                button {
+                    background-color: #4CAF50; /* Green */
+                    border: none;
+                    border-radius: 15px;
+                    color: white;
+                    padding: 8px 10px 10px 8px;
+                    text-align: center;
+                    text-decoration: none;
+                    display: inline-block;
+                    font-size: 12px;
+                    margin: 2px 1px;
+                    cursor: pointer;
+                  }
+                  img {
+                    border: 1px solid #ddd;
+                    border-radius: 4px;
+                    padding: 5px;
+                    width: 170px;
+                  }
+            `}</style>
                 </li>
             )
         else
@@ -127,9 +152,10 @@ const SWR1 = () => {
 
     return (<div className={styles.container} >
           <Navbar />
+          
           <link href="https://fonts.googleapis.com/css2?family=Mali:ital,wght@1,300&display=swap" rel="stylesheet"></link>
         <h1>Admin</h1>
-        <h2>Income:{printIncome()}</h2>
+        <h2>ยอดเงิน:{printIncome()}</h2>
         <h2>Trees</h2>
         <ul className={styles.list}  >{printTrees()}</ul>
         selected tree: {tree.name} {tree.number} {tree.price} {tree.price} {tree.imageurl}
@@ -141,12 +167,58 @@ const SWR1 = () => {
         imageurl:<input type="Linkd" onChange={(e) => setImageurl(e.target.value)} /> <br />
             <button className={styles.byttonadd} onClick={() => addTree(name,number, price,imageurl)}>Add new tree</button>
         </ul>
+
+        <link href="https://fonts.googleapis.com/css2?family=Mali:ital,wght@1,300&display=swap" rel="stylesheet"></link>
+        
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+  Launch demo modal
+</button>
+
+
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
         <style jsx>{`
                 h1,h2,ul{
                   font-family: 'Mali', cursive;
                 }
-
+                button {
+                    background-color: #4CAF50; /* Green */
+                    border: none;
+                    border-radius: 12px;
+                    color: white;
+                    padding: 12px 20px;
+                    text-align: center;
+                    text-decoration: none;
+                    display: inline-block;
+                    font-size: 16px;
+                    margin: 4px 2px;
+                    cursor: pointer;
+                  }
+                  img {
+                    border: 1px solid #ddd;
+                    border-radius: 4px;
+                    padding: 5px;
+                    width: 150px;
+                  }
             `}</style>
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
+            <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js" integrity="sha384-SR1sx49pcuLnqZUnnPwx6FCym0wLsk5JZuNx2bPPENzswTNFaQU1RDvt3wT4gWFG" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.min.js" integrity="sha384-j0CNLUeiqtyaRmlzUHCPZ+Gy5fQu0dQ6eZ/xAww941Ai1SxSY+0EQqNXNE6DZiVc" crossorigin="anonymous"></script>
     </div>
     )
 }
