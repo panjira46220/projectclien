@@ -91,7 +91,7 @@ router.get('/profile',
         newTree.name = req.body.name
         newTree.number = req.body.number
         newTree.price = req.body.price
-        imageurl.price = req.body.imageurl
+        newTree.imageurl = req.body.imageurl
         trees = { "list": [...trees.list, newTree] }
         res.json(trees.list)
     })

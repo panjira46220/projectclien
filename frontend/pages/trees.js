@@ -48,6 +48,7 @@ const SWR2 = () => {
 
                     <button onClick={() => buyTree(tree.id)}  >Buy</button>
                     <style jsx>{`
+                    
                 h1,h2,ul{
                   font-family: 'Mali', cursive;
                 }
@@ -85,6 +86,9 @@ const SWR2 = () => {
         <style jsx>{`
                 h1,h2,ul{
                   font-family: 'Mali', cursive;
+                }
+                h1{
+                    text-shadow:7px 2px 5px orange;
                 }
                 button {
                     background-color: #4CAF50; /* Green */

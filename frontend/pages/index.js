@@ -28,8 +28,13 @@ export default function Home({ token }) {
    
         <style jsx>{`
                 h1,h2,div,b,button{
-                  font-family: 'Mali', cursive;
+                  font-family: 'Mali', cursive; 
+                  
                 }
+                h1,h2{
+                  text-shadow:7px 2px 5px #00CED1;
+                }
+               
 
             `}</style>
    

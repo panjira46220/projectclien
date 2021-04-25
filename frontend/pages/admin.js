@@ -5,7 +5,7 @@ import styles from '../styles/admin.module.css'
 //import useSWR, { mutate } from 'swr'
 import Navbar from "../components/navbar";
 import withAuth from "../components/withAuth";
-
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 const URL = "http://localhost/api/trees";
 const URL2 = "http://localhost/api/income";
@@ -67,7 +67,9 @@ const SWR1 = () => {
     const printTrees = () => {
         if (trees && trees.length)
             return trees.map((tree, index) =>
-            
+            <div>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous"></link>
+           
                 <li className={styles.listItem} key={index}><link href="https://fonts.googleapis.com/css2?family=Mali:ital,wght@1,300&display=swap" rel="stylesheet"></link>
                     <h6>Id:{(tree) ? tree.id : 0}</h6>
                     <h6>Name:{(tree) ? tree.name : '-'}</h6>
@@ -102,6 +104,10 @@ const SWR1 = () => {
                   }
             `}</style>
                 </li>
+                <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
+            <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js" integrity="sha384-SR1sx49pcuLnqZUnnPwx6FCym0wLsk5JZuNx2bPPENzswTNFaQU1RDvt3wT4gWFG" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.min.js" integrity="sha384-j0CNLUeiqtyaRmlzUHCPZ+Gy5fQu0dQ6eZ/xAww941Ai1SxSY+0EQqNXNE6DZiVc" crossorigin="anonymous"></script>
+                </div>
             )
         else
             return <li> No Tree</li>
@@ -150,13 +156,15 @@ const SWR1 = () => {
     
 
 
-    return (<div className={styles.container} >
+    return (
+        <div>
+             <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous"></link>
+        <div className={styles.container} >
           <Navbar />
-          
           <link href="https://fonts.googleapis.com/css2?family=Mali:ital,wght@1,300&display=swap" rel="stylesheet"></link>
         <h1>Admin</h1>
         <h2>ยอดเงิน:{printIncome()}</h2>
-        <h2>Trees</h2>
+       
         <ul className={styles.list}  >{printTrees()}</ul>
         selected tree: {tree.name} {tree.number} {tree.price} {tree.price} {tree.imageurl}
         <h2>Add tree</h2>
@@ -165,36 +173,19 @@ const SWR1 = () => {
         จำนวน:<input type="number" onChange={(e) => setNumber(e.target.value)} /> <br />
         Price:<input type="number" onChange={(e) => setPrice(e.target.value)} /> <br />
         imageurl:<input type="Linkd" onChange={(e) => setImageurl(e.target.value)} /> <br />
+        
             <button className={styles.byttonadd} onClick={() => addTree(name,number, price,imageurl)}>Add new tree</button>
         </ul>
 
         <link href="https://fonts.googleapis.com/css2?family=Mali:ital,wght@1,300&display=swap" rel="stylesheet"></link>
         
-<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-  Launch demo modal
-</button>
+        
 
-
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        ...
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
-      </div>
-    </div>
-  </div>
-</div>
         <style jsx>{`
+        
                 h1,h2,ul{
                   font-family: 'Mali', cursive;
+                  
                 }
                 button {
                     background-color: #4CAF50; /* Green */
@@ -216,7 +207,8 @@ const SWR1 = () => {
                     width: 150px;
                   }
             `}</style>
-            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
+           </div>
+           <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
             <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js" integrity="sha384-SR1sx49pcuLnqZUnnPwx6FCym0wLsk5JZuNx2bPPENzswTNFaQU1RDvt3wT4gWFG" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.min.js" integrity="sha384-j0CNLUeiqtyaRmlzUHCPZ+Gy5fQu0dQ6eZ/xAww941Ai1SxSY+0EQqNXNE6DZiVc" crossorigin="anonymous"></script>
     </div>
