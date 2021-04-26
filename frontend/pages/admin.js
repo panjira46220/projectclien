@@ -80,7 +80,7 @@ const SWR1 = () => {
                     <button className={styles.byttonget} onClick={() => getTree(tree.id)}>Get</button>
                     <button className={styles.byttonupdate} onClick={() => updateTree(tree.id)}>Update</button>
                     <style jsx>{`
-                h1,h2,ul{
+                h1,h2,ul,h6{
                   font-family: 'Mali', cursive;
                 }
                 button {
@@ -157,9 +157,13 @@ const SWR1 = () => {
 
 
     return (
-        <div>
+        <div class =" big">
+            
             <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"></link>
              <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous"></link>
+        
+        
+        
         <div className={styles.container} >
           <Navbar />
           <link href="https://fonts.googleapis.com/css2?family=Mali:ital,wght@1,300&display=swap" rel="stylesheet"></link>
@@ -168,12 +172,12 @@ const SWR1 = () => {
         selected tree: {tree.name} {tree.number} {tree.price} {tree.price} {tree.imageurl}
         <ul className={styles.list}  >{printTrees()}</ul>
         
-        <h2>Add tree</h2>
-        <ul className={styles.formadd} >
-            ชื่อ:<input type="text" onChange={(e) => setName(e.target.value)} /> <br />
-        จำนวน:<input type="number" onChange={(e) => setNumber(e.target.value)} /> <br />
-        Price:<input type="number" onChange={(e) => setPrice(e.target.value)} /> <br />
-        imageurl:<input type="Linkd" onChange={(e) => setImageurl(e.target.value)} /> <br />
+        
+        <ul className={styles.formadd} ><h2> <b><u>Add tree</u></b></h2>&nbsp;&nbsp;&nbsp;
+            ชื่อ:&nbsp;<input type="text" onChange={(e) => setName(e.target.value)} />
+            &nbsp; จำนวน:&nbsp;<input type="number" onChange={(e) => setNumber(e.target.value)} /> 
+            &nbsp;Price:&nbsp;<input type="number" onChange={(e) => setPrice(e.target.value)} /> 
+            &nbsp;imageurl:&nbsp;<input type="Linkd" onChange={(e) => setImageurl(e.target.value)} /> 
         
             <button className={styles.byttonadd} onClick={() => addTree(name,number, price,imageurl)}>Add new tree</button>
         </ul>
@@ -185,10 +189,10 @@ const SWR1 = () => {
         
                 h1,h2,ul{
                   font-family: 'Mali', cursive;
-                  
+                 
                 }
                 button {
-                    background-color: #4CAF50; /* Green */
+                    background-color: rgb(126, 180, 1); /* Green */
                     border: none;
                     border-radius: 12px;
                     color: white;

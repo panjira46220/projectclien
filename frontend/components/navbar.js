@@ -26,12 +26,10 @@ const Navbar = () => (
         </li>
         
         <li class="nav-item ">
-            <Link href="/profile"><a class="nav-link">Profile</a></Link>
-        </li>
-
-        
-        <li class="nav-item ">
             <Link href="/trees"><a class="nav-link">Trees</a></Link>
+
+        </li><li class="nav-item ">
+            <Link href="/money"><a class="nav-link">Order</a></Link>
         </li>
 
         <li class="nav-item">
@@ -40,7 +38,7 @@ const Navbar = () => (
 
         
          
-        <li class=" col-7">
+        <li class=" col-8">
         
         </li>
     

@@ -18,7 +18,7 @@
     margin: 10px;
     padding: 1px;
     flex-wrap: wrap;
-    width: 80vw;
+    width: 50vw;
     font-family: 'Mali', cursive;
     
   }
@@ -94,12 +94,16 @@
 
   .formadd{
       display: flex;
-      flex-direction: column;
-      margin: 20px;
-      padding: 20px;
-      border: 2px solid green;
-      font-size: 1.4rem;
+      flex-direction: row;
+      justify-content: center;
+      margin: 10px;
+      padding: 10px;
+      border: 2px solid rgb(126, 180, 1);
+      font-size: 16px;
       text-align: center;
       font-family: 'Mali', cursive;
-      border-radius: 12%;
+      border-radius: 10px;
+      align-items: center;
+      color: rgb(126, 180, 1);
+      
   }
