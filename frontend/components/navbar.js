@@ -26,11 +26,13 @@ const Navbar = () => (
         </li>
         
         <li class="nav-item ">
-            <Link href="/trees"><a class="nav-link">Trees</a></Link>
-
-        </li><li class="nav-item ">
-            <Link href="/money"><a class="nav-link">Order</a></Link>
+            <Link href="/meow"><a class="nav-link">Profile</a></Link>
         </li>
+        
+        <li class="nav-item ">
+            <Link href="/trees"><a class="nav-link">Trees</a></Link>
+        </li>
+        
 
         <li class="nav-item">
             <Link href="/admin"><a class="nav-link">Admin</a></Link>
@@ -38,7 +40,7 @@ const Navbar = () => (
 
         
          
-        <li class=" col-8">
+        <li class=" col-7">
         
         </li>
     
